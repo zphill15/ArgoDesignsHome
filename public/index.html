@@ -5,7 +5,8 @@
     <meta name="description" content="Argo Designs is a design firm focusing on Augmented and Virtual Reality 
     Development and Design as well as Applied Artificial Intelligence and Robotics">
     <meta name="author" content="Argo Designs">
-     <!--Aframe for Web VR-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <!--Aframe for Web VR-->
      <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
     <link rel="icon" href="assets/ArgoLogo.png">
 
@@ -18,6 +19,47 @@
 
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
+    <script type="text/javascript">
+      AFRAME.registerComponent('drag-rotate-component',{
+        schema : { speed : {default:1}},
+        init : function(){
+          this.ifMouseDown = false;
+          this.x_cord = 0;
+          this.y_cord = 0;
+          document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
+          document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
+          document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
+        },
+        OnDocumentMouseDown : function(event){
+          this.ifMouseDown = true;
+          this.x_cord = event.clientX;
+          this.y_cord = event.clientY;
+        },
+        OnDocumentMouseUp : function(){
+          this.ifMouseDown = false;
+        },
+        OnDocumentMouseMove : function(event)
+        {
+          if(this.ifMouseDown)
+          {
+            var temp_x = event.clientX-this.x_cord;
+            var temp_y = event.clientY-this.y_cord;
+            if(Math.abs(temp_y)<Math.abs(temp_x))
+            {
+              this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+            }
+            else
+            {
+              this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+            }
+            this.x_cord = event.clientX;
+            this.y_cord = event.clientY;
+          }
+        }
+      });
+    </script>
+
+
   </head>
 
   <body class="text-center" data-gr-c-s-loaded="true">
@@ -45,14 +87,15 @@
          
    <!-- Asset management system. -->
   <a-assets>
-    <a-asset-item id="argo" src="assets/scene.gltf" drag-rotate></a-asset-item>
+    <a-asset-item id="argo" src="assets/scene.gltf" ></a-asset-item>
   </a-assets>
 
  <!-- <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" shadow></a-sphere>-->
-        <a-entity gltf-model="#argo" position="0 0 -15"></a-entity>
+        <a-entity gltf-model="#argo" position="0 0 -15" drag-rotate-component></a-entity>
         <!-- Default lighting injected by A-Frame. -->
         <a-entity light="type: ambient; color: #BBB"></a-entity>
         <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
+        <a-camera look-controls="enabled:false"></a-camera>
 </a-scene>
 
             <br>
