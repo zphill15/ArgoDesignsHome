@@ -49,13 +49,17 @@
   </a-assets>
 
  <!-- <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" shadow></a-sphere>-->
-        <a-entity gltf-model="#argo" position="0 0.5 -7"></a-entity>-->
-        
+        <a-entity gltf-model="#argo" position="0 0 -20"></a-entity>
+        <!-- Default lighting injected by A-Frame. -->
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 1.6" position="-0.5 1 1"></a-entity>
 </a-scene>
 
             <br>
             <br>
           <a href="stress.html" class="btn btn-lg btn-secondary" id="fg">Our Work</a>
+          <br>
+          <br>
       </main>
 
       <footer class="mastfoot mt-auto" id="fg">
