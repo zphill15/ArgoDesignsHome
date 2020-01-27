@@ -5,6 +5,10 @@
     <meta name="description" content="Argo Designs is a design firm focusing on Augmented and Virtual Reality 
     Development and Design as well as Applied Artificial Intelligence and Robotics">
     <meta name="author" content="Argo Designs">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <!--Aframe for Web VR-->
+     <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
+
     <link rel="icon" href="assets/ArgoLogo.png">
 
     <title>ArgoDesigns</title>
@@ -20,30 +24,47 @@
 
   <body class="text-center" data-gr-c-s-loaded="true">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="fg">
       <header class="masthead mb-auto">
         <div class="inner">
-          <a href="index.html"><h3 class="masthead-brand">Argo Designs</h3></a>
-          <nav class="nav nav-masthead justify-content-center">
+          <a href="index.html"><h3 class="masthead-brand" id="fg">Argo Designs</h3></a>
+          <nav class="nav nav-masthead justify-content-center" id="fg">
             <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link active" href="stress.html">StressBud</a>
+            <a class="nav-link active" href="stress.html" id="fg">StressBud</a>
            <!-- <a class="nav-link" href="#">Contact</a>-->
           </nav>
         </div>
       </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">StressBud</h1>
-        <h3 >Your Virtual Punching Bag</h3>
+        <h1 class="cover-heading" id="fg">StressBud</h1>
+        <a-scene id="bg" loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
+         
+          <!-- Asset management system. -->
+         <a-assets>
+           <a-asset-item id="bud" src="assets/bud.gltf" ></a-asset-item>
+         </a-assets>
+       
+             <a-entity gltf-model="#bud" position="0 0 -10" drag-rotate-component></a-entity>
+               <!-- Default lighting injected by A-Frame. -->
+               <a-entity light="type: ambient; color: #BBB"></a-entity>
+               <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
+               <a-camera look-controls="enabled:false" wasd-controls-enabled="true"></a-camera></a-camera>
+                
+       </a-scene>
+        
+    
+        
+        <h3 id="fg">Your Virtual Punching Bag</h3>
         <br>
-        <img src="assets/Boom1 1x.png" class="rounded mx-auto d-block" alt="Responsive image" >
+        <!--<img src="assets/Boom1 1x.png" class="rounded mx-auto d-block" alt="Responsive image" >-->
           <br>
-        <p class="lead"> Now available on SideQuest</p>
-          <a href="https://sidequestvr.com/#/app/426" class="btn btn-lg btn-secondary">Download Here</a>
+        <p class="lead" id="fg"> Now available on SideQuest</p>
+          <a href="https://sidequestvr.com/#/app/426" class="btn btn-lg btn-secondary" id="fg">Download Here</a>
         </p>
       </main>
 
-      <footer class="mastfoot mt-auto">
+      <footer class="mastfoot mt-auto" id="fg">
         <div class="inner">
          <!-- <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p> -->
         <!--Start of Tawk.to Script-->
