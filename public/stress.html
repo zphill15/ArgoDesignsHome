@@ -32,6 +32,10 @@
           document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
           document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
           document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
+          document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this));
+          document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this));
+          document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
+          document.addEventListener('touchcancel',this.OnDocumentMouseUp.bind(this));
         },
         OnDocumentMouseDown : function(event){
           this.ifMouseDown = true;
@@ -66,13 +70,13 @@
 
   <body class="text-center" data-gr-c-s-loaded="true">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="fg">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
-        <div class="inner">
+        <div class="inner" id="fg">
           <a href="index.html"><h3 class="masthead-brand" id="fg">Argo Designs</h3></a>
           <nav class="nav nav-masthead justify-content-center" id="fg">
             <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link active" href="stress.html" id="fg">StressBud</a>
+            <a class="nav-link active" href="stress.html">StressBud</a>
            <!-- <a class="nav-link" href="#">Contact</a>-->
           </nav>
         </div>
