@@ -32,10 +32,10 @@
           document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
           document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
           document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
-          document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this));
-          document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this));
-          document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
-          document.addEventListener('touchcancel',this.OnDocumentMouseUp.bind(this));
+          document.addEventListener('ontouchstart',this.OnDocumentMouseDown.bind(this));
+          document.addEventListener('ontouchend',this.OnDocumentMouseUp.bind(this));
+          document.addEventListener('ontouchmove',this.OnDocumentMouseMove.bind(this));
+          document.addEventListener('ontouchcancel',this.OnDocumentMouseUp.bind(this));
         },
         OnDocumentMouseDown : function(event){
           this.ifMouseDown = true;
