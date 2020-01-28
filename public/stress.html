@@ -27,15 +27,16 @@
         schema : { speed : {default:1}},
         init : function(){
           this.ifMouseDown = false;
+          this.ifTouchDown = false;
           this.x_cord = 0;
           this.y_cord = 0;
           document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
           document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
           document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
-          document.addEventListener('ontouchstart',this.OnDocumentMouseDown.bind(this));
-          document.addEventListener('ontouchend',this.OnDocumentMouseUp.bind(this));
-          document.addEventListener('ontouchmove',this.OnDocumentMouseMove.bind(this));
-          document.addEventListener('ontouchcancel',this.OnDocumentMouseUp.bind(this));
+          document.addEventListener('ontouchstart',this.OnDocumentTouchDown.bind(this));
+          document.addEventListener('ontouchend',this.OnDocumentTouchUp.bind(this));
+          document.addEventListener('ontouchmove',this.OnDocumentTouchMove.bind(this));
+          document.addEventListener('ontouchcancel',this.OnDocumentTouchUp.bind(this));
         },
         OnDocumentMouseDown : function(event){
           this.ifMouseDown = true;
@@ -62,6 +63,37 @@
             this.x_cord = event.clientX;
             this.y_cord = event.clientY;
           }
+          
+        },
+        OnDocumentTouchDown : function(event){
+          this.ifMouseDown = true;
+          this.x_cord = event.clientX;
+          this.y_cord = event.clientY;
+          console.log("touch down");
+        },
+        OnDocumentTouchUp : function(){
+          this.ifMouseDown = false;
+          console.log("touch up");
+        },
+        OnDocumentTouchMove : function(event)
+        {
+          console.log("touch moving");
+          if(this.ifMouseDown)
+          {
+            var temp_x = event.clientX-this.x_cord;
+            var temp_y = event.clientY-this.y_cord;
+            if(Math.abs(temp_y)<Math.abs(temp_x))
+            {
+              this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+            }
+            else
+            {
+              this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+            }
+            this.x_cord = event.clientX;
+            this.y_cord = event.clientY;
+          }
+      
         }
       });
     </script>
