@@ -78,6 +78,7 @@ body {
 #fg{
   position: relative;
   z-index: 1;
+  background-color: rgba(51, 51, 51, .5);
 }
 #bg{
   position: relative;
@@ -114,7 +115,3 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
-mark {
-  background-color: rgba(51, 51, 51, .5);
-  color: white;
-}
