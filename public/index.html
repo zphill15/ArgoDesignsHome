@@ -93,23 +93,25 @@
           </nav>
         </div>
       </header>
-      <a-scene embedded allowfullscreen="yes" id="bg" loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
-         
-        <!-- Asset management system. -->
-       <a-assets>
-         <a-asset-item id="argo" src="assets/scene.gltf" ></a-asset-item>
-       </a-assets>
-     
-      <!-- <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" shadow></a-sphere>-->
-             <a-entity gltf-model="#argo" position="0 0 -15"  rotation="0 360 0" animation="loop: true; dur: 10000" drag-rotate-component></a-entity>
-             <!-- Default lighting injected by A-Frame. -->
-             <a-entity light="type: ambient; color: #BBB"></a-entity>
-             <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
-             <a-camera wasd-controls="enabled:true" look-controls="enabled:false" ></a-camera></a-camera>
-            <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
-     </a-scene>
+   
       <main role="main" class="inner cover">
         <h1 class="cover-heading" id="fg">We Make Things.</h1>
+
+        <a-scene embedded allowfullscreen="yes" id="bg" loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
+         
+          <!-- Asset management system. -->
+         <a-assets>
+           <a-asset-item id="argo" src="assets/scene.gltf" ></a-asset-item>
+         </a-assets>
+       
+        <!-- <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" shadow></a-sphere>-->
+               <a-entity gltf-model="#argo" position="0 0 -15"  rotation="0 360 0" animation="loop: true; dur: 10000" drag-rotate-component></a-entity>
+               <!-- Default lighting injected by A-Frame. -->
+               <a-entity light="type: ambient; color: #BBB"></a-entity>
+               <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
+               <a-camera wasd-controls="enabled:true" look-controls="enabled:false" ></a-camera></a-camera>
+              <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
+       </a-scene>
 
         <br>
         <br>
@@ -117,7 +119,7 @@
       <br>
       <br>
   </main>
-  
+
         <div class="container">
        
           <div class="row">
@@ -142,8 +144,7 @@
           </div>
         </div>
     </body>
-
-         
+  
       <footer class="mastfoot mt-auto" id="fg">
         <div class="inner">
          <!--Start of Tawk.to Script-->
