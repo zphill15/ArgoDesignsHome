@@ -73,6 +73,15 @@
       });
   });  
   </script>
+  <script>
+    $(function () { // wait for document ready
+      // build scene
+      var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 300})
+              .setPin("#pin1")
+              .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
+              .addTo(controller);
+    });
+  </script>
 <style>
   body{
     position: relative; /* required */
@@ -98,10 +107,10 @@
         </div>
       </header>
    
-      <main role="main" class="inner cover">
+      <main role="main" id="trigger1" class="inner cover">
         <h1 class="cover-heading" id="fg">We Make Things.</h1>
 
-        <a-scene id="bg" loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
+        <a-scene embedded="true" id="pin1" loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
          
           <!-- Asset management system. -->
          <a-assets>
