@@ -8,8 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <!--Aframe for Web VR-->
      <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
-     <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script> 
-     <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script> 
+    <!-- <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script> 
+     <script src="https://unpkg.com/aframe-supercraft-loader@1.1.3/dist/aframe-supercraft-loader.js"></script> -->
      <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.14/dist/aframe-orbit-controls-component.min.js"></script>
 
      <link rel="icon" href="assets/ArgoLogo.png">
@@ -113,8 +113,15 @@
                <!-- Default lighting injected by A-Frame. -->
                <a-entity light="type: ambient; color: #BBB"></a-entity>
                <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
-               <a-camera look-controls="true" orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; 
-                rotateSpeed:0.1; rotateToSpeed: 0.04; rotateTo: 0.172 4.140 2.797; maxDistance: 180; initialPosition: 0 0 0" rotation="true"></a-camera></a-camera>
+               <a-camera position="0 0 5" orbit-controls="
+               target: #target;
+               enableDamping: true;
+               dampingFactor: 0.125;
+               rotateSpeed:0.25;
+               rotateToSpeed: 0.04;
+               rotateTo: 0.172 4.140 2.797;
+               logPosition: true;
+               " rotation="" scale="" visible="" look-controls=""></a-camera></a-camera>
               <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
        </a-scene>
 
