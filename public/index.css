@@ -96,10 +96,6 @@ a-scene { position: relative;
   z-index: -0.5;
 }
 
-#trigger1{
-  height: auto;
-  width: auto;
-}
 @media (min-width: 48em) {
   .masthead-brand {
     float: left;
