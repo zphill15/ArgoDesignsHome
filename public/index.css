@@ -79,10 +79,6 @@ body {
   position: relative;
   z-index: 1;
 }
-#bg{
-  position: relative;
-  z-index: -0.5;
-}
 
 /*
  * Ascene styles
@@ -93,7 +89,6 @@ a-scene { position: relative;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; 
-  z-index: -0.5;
 }
 
 @media (min-width: 48em) {
