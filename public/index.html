@@ -91,7 +91,7 @@
       top: 15px;
   }
   a-scene{
-    z-index: -10;
+    z-index: -1;
   }
   </style>
   </head>
@@ -112,8 +112,8 @@
       
       <main role="main" id="trigger1" class="inner cover">
         <h1 class="cover-heading" id="fg">We Make Things.</h1>
-        <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-          <a-scene id="pin1" loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
+        <div class="cover-container mx-auto">
+          <a-scene loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
            
             <!-- Asset management system. -->
            <a-assets>
@@ -126,7 +126,7 @@
                  <a-entity light="type: ambient; color: #BBB"></a-entity>
                  <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
                  <a-camera look-controls="true" orbit-controls="target: 0 0 3; minDistance: 0.5; 
-                 maxDistance: 180; initialPosition: 0 0 -10" enableRotate="true" enableZoom="true" enablePan="true" enableKeys="true"></a-camera></a-camera>
+                 maxDistance: 180; initialPosition: 0 0 -5" enableRotate="true" enableZoom="true" enablePan="true" enableKeys="true"></a-camera></a-camera>
                 <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
          </a-scene>
         </div>
