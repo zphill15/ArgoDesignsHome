@@ -97,8 +97,8 @@ a-scene { position: relative;
 }
 
 #trigger1{
-  height: max-content;
-  width: max-content;
+  height: auto;
+  width: auto;
 }
 @media (min-width: 48em) {
   .masthead-brand {
