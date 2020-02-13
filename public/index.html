@@ -63,7 +63,7 @@
         }
       });
     </script> -->
-   <!--ScrollSpy script
+   ScrollSpy script
 <script type="text/javascript">
   $(document).ready(function(){
       $(".list-group a").click(function(){
@@ -81,8 +81,15 @@
               .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
               .addTo(controller);
     });
+    function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
   </script>
-  --> 
+
 <style>
   body{
     position: relative; /* required */
@@ -91,9 +98,7 @@
       position: sticky; /* Supported in latest version of Chrome, Firefox, Safari, Opera and Edge browsers */
       top: 15px;
   }
-  a-scene{
-    z-index: -1;
-  }
+  
   </style>
   </head>
   <a-scene embedded loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
@@ -112,7 +117,10 @@
          maxDistance: 180; initialPosition: 0 0 -5" enableRotate="true" enableZoom="false" enablePan="true" enableKeys="true"></a-camera></a-camera>
         <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
  </a-scene>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+ <div>
+ <button onclick="on()">overlay</button>
+</div>
+   <!--<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner" >
          
@@ -128,19 +136,19 @@
       <main role="main" id="section1" class="inner cover">
         <h1 class="cover-heading">We Make Things.</h1>
        
-        
         <br>
         <br>
-      <a href="stress.html" class="btn btn-lg btn-secondary" id="fg">Our Work</a>
+      <p>Scroll for more</p>
       <br>
       <br>
   </main>
 
-        <div class="container">
+-->  
+ <div class="container-fluid" id="myScrollspy" id="overlay">
          
           <div class="col-sm-9">
           <div id="section2">
-            <h2>Section One</h2>
+            <h2 id="trigger">We Make Things</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>
                      </div>
           <hr>
@@ -148,10 +156,11 @@
             <h2>Section Two</h2>
             <p>Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan. Mauris quis dapibus orci. In dapibus velit blandit pharetra tincidunt. Quisque non sapien nec lacus condimentum facilisis ut iaculis enim. Sed viverra interdum bibendum. Donec ac sollicitudin dolor. Sed fringilla vitae lacus at rutrum. Phasellus congue vestibulum ligula sed consequat.</p>
                       </div>
+                      <button onclick="off"></button>
           </div>
         </div>
   
-      <footer class="mastfoot mt-auto" id="fg">
+      <footer class="mastfoot mt-auto" >
         <div class="inner">
          <!--Start of Tawk.to Script-->
 <script type="text/javascript">
