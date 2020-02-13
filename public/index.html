@@ -63,7 +63,7 @@
         }
       });
     </script> -->
-   ScrollSpy script
+  <!-- ScrollSpy script -->
 <script type="text/javascript">
   $(document).ready(function(){
       $(".list-group a").click(function(){
@@ -81,13 +81,13 @@
               .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
               .addTo(controller);
     });
-    function on() {
+$(function on() {
   document.getElementById("overlay").style.display = "block";
-}
+})
 
-function off() {
+$(function off() {
   document.getElementById("overlay").style.display = "none";
-}
+});
   </script>
 
 <style>
@@ -101,6 +101,9 @@ function off() {
   
   </style>
   </head>
+  
+  <body>
+  <div class="container-fluid">
   <a-scene embedded loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
            
     <!-- Asset management system. -->
@@ -113,13 +116,16 @@ function off() {
          <!-- Default lighting injected by A-Frame. -->
          <a-entity light="type: ambient; color: #BBB"></a-entity>
          <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
-         <a-camera look-controls="true" orbit-controls="target: 0 0 3; minDistance: 0.5; 
+         <a-camera look-controls="true" orbit-controls="target: 0 0 -10; minDistance: 0.5; 
          maxDistance: 180; initialPosition: 0 0 -5" enableRotate="true" enableZoom="false" enablePan="true" enableKeys="true"></a-camera></a-camera>
         <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
  </a-scene>
  <div>
- <button onclick="on()">overlay</button>
+  <button class="button" onclick="on()">overlay</button>
+ </div>
 </div>
+
+ 
    <!--<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner" >
@@ -144,7 +150,7 @@ function off() {
   </main>
 
 -->  
- <div class="container-fluid" id="myScrollspy" id="overlay">
+ <div class="container-fluid" id="overlay">
          
           <div class="col-sm-9">
           <div id="section2">
@@ -159,7 +165,7 @@ function off() {
                       <button onclick="off"></button>
           </div>
         </div>
-  
+  </body>
       <footer class="mastfoot mt-auto" >
         <div class="inner">
          <!--Start of Tawk.to Script-->
