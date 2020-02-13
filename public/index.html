@@ -81,13 +81,6 @@
               .addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
               .addTo(controller);
     });
-$(function on() {
-  document.getElementById("overlay").style.display = "block";
-})
-
-$(function off() {
-  document.getElementById("overlay").style.display = "none";
-});
   </script>
 
 <style>
@@ -166,7 +159,7 @@ $(function off() {
           </div>
         </div>
   </body>
-      <footer class="mastfoot mt-auto" >
+  <footer class="mastfoot mt-auto" >
         <div class="inner">
          <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -181,16 +174,20 @@ $(function off() {
   })();
   </script>
   <!--End of Tawk.to Script-->
-  <br>
-  <br>
-  <br>
-  <br>
   <p>All rights reserved © 2020</p>
         </div>
       </footer>
     <!--</div>-->
 
-
+    <script type="text/javascript">
+      function on() {
+      document.getElementById("overlay").style.display = "block";
+    }
+    
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    };
+      </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
