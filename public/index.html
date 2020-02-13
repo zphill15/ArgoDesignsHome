@@ -63,7 +63,7 @@
         }
       });
     </script> -->
-   <!--ScrollSpy script--> 
+   <!--ScrollSpy script
 <script type="text/javascript">
   $(document).ready(function(){
       $(".list-group a").click(function(){
@@ -82,6 +82,7 @@
               .addTo(controller);
     });
   </script>
+  --> 
 <style>
   body{
     position: relative; /* required */
@@ -95,41 +96,39 @@
   }
   </style>
   </head>
-  
-  <body class="text-center" data-gr-c-s-loaded="true" data-spy="scroll" data-offset="15" data-target="#myScrollspy">
+  <a-scene embedded loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
+           
+    <!-- Asset management system. -->
+   <a-assets>
+     <a-asset-item id="argo" src="assets/scene.gltf" ></a-asset-item>
+   </a-assets>
  
+  <!-- <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" shadow></a-sphere>-->
+         <a-entity gltf-model="#argo" position="0 0 -15" drag-rotate-component></a-entity>
+         <!-- Default lighting injected by A-Frame. -->
+         <a-entity light="type: ambient; color: #BBB"></a-entity>
+         <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
+         <a-camera look-controls="true" orbit-controls="target: 0 0 3; minDistance: 0.5; 
+         maxDistance: 180; initialPosition: 0 0 -5" enableRotate="true" enableZoom="false" enablePan="true" enableKeys="true"></a-camera></a-camera>
+        <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
+ </a-scene>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto" >
-        <div class="inner" id="fg">
-          <a href="index.html"><h3 class="masthead-brand" id="fg">Argo Designs</h3></a>
-          <nav class="nav nav-masthead justify-content-center" id="fg">
-            <a class="nav-link active" href="index.html">Home</a>
-            <a class="nav-link" href="stress.html">StressBud</a>
-            <a class="nav-link" href="work.html">Work</a>
-           <!-- <a class="nav-link" href="#">Contact</a>-->
+      <header class="masthead mb-auto">
+        <div class="inner" >
+         
+          <a href="index.html"><h3 class="masthead-brand" >Argo Designs</h3></a>
+          <nav class="nav nav-masthead justify-content-center" id="myScrollspy">
+            <a class="nav-link active" href="#section1">Home</a>
+            <a class="nav-link" href="#stress">StressBud</a>
+            <a class="nav-link" href="#section3">Real Estate</a>
           </nav>
         </div>
       </header>
       
-      <main role="main" id="trigger1" class="inner cover">
-        <h1 class="cover-heading" id="fg">We Make Things.</h1>
+      <main role="main" id="section1" class="inner cover">
+        <h1 class="cover-heading">We Make Things.</h1>
        
-          <a-scene loading-screen="dotsColor: #FFFFFF; backgroundColor: #333">        
-           
-            <!-- Asset management system. -->
-           <a-assets>
-             <a-asset-item id="argo" src="assets/scene.gltf" ></a-asset-item>
-           </a-assets>
-         
-          <!-- <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" shadow></a-sphere>-->
-                 <a-entity gltf-model="#argo" position="0 0 -15" drag-rotate-component></a-entity>
-                 <!-- Default lighting injected by A-Frame. -->
-                 <a-entity light="type: ambient; color: #BBB"></a-entity>
-                 <a-entity light="type: directional; color: #FFF; intensity: 50" position="-0.5 3 1"></a-entity>
-                 <a-camera look-controls="true" orbit-controls="target: 0 0 3; minDistance: 0.5; 
-                 maxDistance: 180; initialPosition: 0 0 -5" enableRotate="true" enableZoom="true" enablePan="true" enableKeys="true"></a-camera></a-camera>
-                <!-- document.querySelector('[camera]').removeAttribute('look-controls'); -->
-         </a-scene>
+        
         <br>
         <br>
       <a href="stress.html" class="btn btn-lg btn-secondary" id="fg">Our Work</a>
@@ -138,23 +137,14 @@
   </main>
 
         <div class="container">
-       
-          <div class="row">
-            <div class="col-sm-3" id="myScrollspy">
-                <div class="list-group">
-                    <a class="list-group-item list-group-item-action active" href="#section1">Section One</a>
-                    <a class="list-group-item list-group-item-action" href="#section2">Section Two</a>
-                   
-                  </div>
-            </div>
-        </div>    
+         
           <div class="col-sm-9">
-          <div id="section1">
+          <div id="section2">
             <h2>Section One</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>
                      </div>
           <hr>
-          <div id="section2">
+          <div id="section3">
             <h2>Section Two</h2>
             <p>Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan. Mauris quis dapibus orci. In dapibus velit blandit pharetra tincidunt. Quisque non sapien nec lacus condimentum facilisis ut iaculis enim. Sed viverra interdum bibendum. Donec ac sollicitudin dolor. Sed fringilla vitae lacus at rutrum. Phasellus congue vestibulum ligula sed consequat.</p>
                       </div>
